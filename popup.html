@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refresh Yo</title>
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup.js" type="module"></script>
+</head>
+<body>
+    <div id="root">
+        <div class="header">
+            <img src="assets/imgs/logo-02.png" alt="logo">
+        </div>
+        <div class="container">
+            <div class="tabsbtn">
+                <button class="tab-btn tab-active" id="current-jobs-btn">Current Jobs</button>
+                <button class="tab-btn" id="create-new-btn">Create New</button>
+                <!-- <button class="tab-btn" id="history-btn">History</button> -->
+            </div>
+
+
+            <section class="current-jobs " id="current-jobs">
+                <div class="current-jobs-head">
+                    <h3>URL Reload Jobs</h3>
+                    <div class="current-jobs-head-right">
+                        <p>Status</p> 
+                        <p> - Interval</p> 
+                        <p> - Duration</p>
+                    </div>
+                </div>
+
+                <div class="current-job" id="current-job"></div>
+
+                <div class="current-jobs-actions" id="current-jobs-actions">
+                    <button id="pause">Pause</button>
+                    <button id="run">Run</button>
+                    <button id="delete-jobs">Delete</button>
+                </div>
+            </section>
+
+            <section class="create-job active-section" id="create-new">
+                <form class="create-job-form" id="create-job">
+                    <label for="url" id="url-label">URL</label>
+                    <div class="url-input">
+                        <input type="text" class="url" id="url">
+                    </div>
+    
+                    <div class="create-new-content" id="create-new-content">
+                        <label for="hw-often">How Often</label>
+                        <div class="hw-often-input">
+                            <input type="number" min="0"> SEC
+                        </div>
+                        <div class="switch-on-init">
+                            <label for="switch-on-init"></label>
+                            <span>Switch-on job on create</span>
+                            <input type="checkbox" name="switch-on-init" id="switch-on-init">
+                        </div>
+                        <!-- <label for="hw-often">For How Long</label>
+                        <div class="hw-often-input">
+                            <input type="text"> Min
+                        </div>
+                        <div class="hw-often-input">
+                            <input type="text"> SEC
+                        </div> -->
+                    </div>
+    
+                    <div class="create-new-actions">
+                        <button type="button">Create Job</button>
+                    </div>
+                </form>
+            </section>
+
+
+            <section class="jobs-history" id="history">
+                <div class="jobs-history-head">
+                    <h3>History</h3>
+                    <div class="jobs-history-head-right">
+                        <p>Run Date & Time</p> 
+                        <p>- URL Load Time</p> 
+                    </div>
+                </div>
+
+                <div class="job-history" id="job-history"></div>
+
+                <div class="jobs-history-actions">
+                    
+                    <button id="delete-history">Delete</button>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>
