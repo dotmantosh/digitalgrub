@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refresh Yo</title>
     <link rel="stylesheet" href="popup.css">
+    <script src="lib/moments.min.js"></script>
     <script src="popup.js" type="module"></script>
 </head>
 <body>
@@ -20,17 +21,21 @@
             </div>
 
 
-            <section class="current-jobs " id="current-jobs">
+            <section class="current-jobs active-section" id="current-jobs">
                 <div class="current-jobs-head">
                     <h3>URL Reload Jobs</h3>
                     <div class="current-jobs-head-right">
-                        <p>Status</p> 
-                        <p> - Interval</p> 
-                        <p> - Duration</p>
+                        <p>Status</p>
+                        <p>Interval</p>
+                        <p>Duration</p>
                     </div>
+                    
                 </div>
+                
 
-                <div class="current-job" id="current-job"></div>
+                <div class="current-job" id="current-job">
+
+                </div>
 
                 <div class="current-jobs-actions" id="current-jobs-actions">
                     <button id="pause">Pause</button>
@@ -39,7 +44,7 @@
                 </div>
             </section>
 
-            <section class="create-job active-section" id="create-new">
+            <section class="create-job" id="create-new">
                 <form class="create-job-form" id="create-job">
                     <label for="url" id="url-label">URL</label>
                     <div class="url-input">
@@ -47,15 +52,36 @@
                     </div>
     
                     <div class="create-new-content" id="create-new-content">
-                        <label for="hw-often">How Often</label>
-                        <div class="hw-often-input">
-                            <input type="number" min="0"> SEC
+                        <div class="create-new-left">
+                            <label for="often">Interval</label>
+                            <div class="hw-often-min-input">
+                                <input type="number" min="0" id="often-min"> Min
+                            </div>
+                            <div class="hw-often-input">
+                                <input type="number" min="0" id="often"> SEC
+                            </div>
+                            <div class="for-how-long">
+                                <label for="min">Duration</label>
+                                <div class="duration-min">
+                                    <input type="number" min="0" id="duration-min-input"> MIN
+                                </div>
+                                <div class="duration-sec">
+                                    <input type="number" min="0" id="duration-sec-input"> SEC
+                                </div>
+                            </div>
+                            <div class="switch-on-init">
+                                <label for="switch-on-init" id="switch-on-init-display"><div class="checked"></div></label>
+                                <span>Activate</span>
+                                <input type="checkbox" name="switch-on-init" id="switch-on-init" checked>
+                            </div>
                         </div>
-                        <div class="switch-on-init">
-                            <label for="switch-on-init"></label>
-                            <span>Switch-on job on create</span>
-                            <input type="checkbox" name="switch-on-init" id="switch-on-init">
-                        </div>
+                        <!-- <div class="create-new-right">
+                            <div class="switch-on-init">
+                                <label for="block-popups" id="switch-on-init-display"><div class="checked"></div></label>
+                                <span>Block Popups</span>
+                                <input type="checkbox" name="block-popups" id="block-popups">
+                            </div>
+                        </div> -->
                         <!-- <label for="hw-often">For How Long</label>
                         <div class="hw-often-input">
                             <input type="text"> Min
@@ -66,7 +92,7 @@
                     </div>
     
                     <div class="create-new-actions">
-                        <button type="button">Create Job</button>
+                        <button id="createbtn">Create Job</button>
                     </div>
                 </form>
             </section>
